@@ -13,8 +13,17 @@ def test_creator():
     ), "Failed. Initialization wrong"
 
 
-def test_pop():
+def test_push():
     fifo_obj = Fifo(3)
     fifo_obj.push(4)
 
-    assert fifo_obj.elements == 1, "Failed, problem on pop "
+    assert fifo_obj.elements == 1, "Failed, problem on push"
+
+
+def test_push():
+    fifo_obj = Fifo(3)
+    fifo_obj.push(4)
+    fifo_obj.push(5)
+    element = fifo_obj.pop()
+
+    assert element == 4, "Failed, problem on pop"
