@@ -14,7 +14,7 @@ def test_creator():
 
 
 def test_pop():
-    fifo_obj = Fifo()
+    fifo_obj = Fifo(3)
     fifo_obj.push(4)
 
     assert fifo_obj.elements == 1, "Failed, problem on pop "
