@@ -27,3 +27,9 @@ def test_push():
     element = fifo_obj.pop()
 
     assert element == 4, "Failed, problem on pop"
+
+
+def test_is_empty():
+    fifo_obj = Fifo(3)
+
+    assert fifo_obj.is_empty(), "Failed, empty"

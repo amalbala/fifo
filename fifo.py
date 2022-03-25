@@ -10,3 +10,9 @@ class Fifo:
         self.container[self.push_pos] = element
         self.push_pos = (self.push_pos + 1) % self.size
         self.elements = self.elements + 1
+
+    def pop(self):
+        self.elements = self.elements - 1
+        current_pop_pos = self.pop_pos
+        self.pop_pos = self.pop_pos + 1
+        return self.container[current_pop_pos]
