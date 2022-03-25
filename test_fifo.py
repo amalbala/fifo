@@ -6,18 +6,14 @@ from fifo import Fifo
 
 def test_creator():
     fifo_obj = Fifo(3)
-
-    assert (
-        fifo_obj.elements == fifo_obj.pop_pos == fifo_obj.push_pos == 0
-        and fifo_obj.size == 3
-    ), "Failed. Initialization wrong"
+    assert True, "Failed, initialization"
 
 
 def test_push():
     fifo_obj = Fifo(3)
     fifo_obj.push(4)
 
-    assert fifo_obj.elements == 1, "Failed, problem on push"
+    assert fifo_obj.isEmpty() == False, "Failed, problem on push"
 
 
 def test_push():
@@ -33,3 +29,21 @@ def test_is_empty():
     fifo_obj = Fifo(3)
 
     assert fifo_obj.isEmpty() == True, "Failed, empty"
+
+
+def test_many_imputs():
+    fifo_obj = Fifo(3)
+    fifo_obj.push(1)
+    fifo_obj.pop()
+    fifo_obj.push(1)
+    fifo_obj.pop()
+    fifo_obj.push(1)
+    fifo_obj.pop()
+    fifo_obj.push(1)
+    fifo_obj.pop()
+    fifo_obj.push(1)
+    fifo_obj.pop()
+    fifo_obj.push(1)
+    fifo_obj.pop()
+
+    assert fifo_obj.isEmpty() == True, "Failed, several inputs"
