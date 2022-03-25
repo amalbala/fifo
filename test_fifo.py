@@ -58,11 +58,11 @@ def test_many_push():
     fifo_obj.push(1)
     fifo_obj.push(1)
 
-    assert fifo_obj.isEmpty() == False, "Failed, several inputs"
+    assert fifo_obj.isEmpty() == False, "Failed, several push"
 
 
 def test_popWhenEmpty():
     fifo_obj = Fifo(3)
     fifo_obj.pop()
 
-    assert fifo_obj.isEmpty() == True, "Failed, several inputs"
+    assert fifo_obj.isEmpty() == True, "Failed, several pops"
