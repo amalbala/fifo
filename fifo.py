@@ -7,11 +7,15 @@ class Fifo:
         self._container = [None] * size
 
     def push(self, element):
-        self._container[self._push_pos] = element
-        self._push_pos = (self._push_pos + 1) % self._size
-        self._elements = self._elements + 1
+        if self._elements < self._size:
+            self._container[self._push_pos] = element
+            self._push_pos = (self._push_pos + 1) % self._size
+            self._elements = self._elements + 1
 
     def pop(self):
+        if self.isEmpty():
+            return None
+
         self._elements = self._elements - 1
         current_pop_pos = self._pop_pos
         self._pop_pos = (self._pop_pos + 1) % self._size

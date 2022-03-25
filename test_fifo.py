@@ -31,7 +31,7 @@ def test_is_empty():
     assert fifo_obj.isEmpty() == True, "Failed, empty"
 
 
-def test_many_imputs():
+def test_many_pop_and_push():
     fifo_obj = Fifo(3)
     fifo_obj.push(1)
     fifo_obj.pop()
@@ -44,6 +44,25 @@ def test_many_imputs():
     fifo_obj.push(1)
     fifo_obj.pop()
     fifo_obj.push(1)
+    fifo_obj.pop()
+
+    assert fifo_obj.isEmpty() == True, "Failed, several inputs"
+
+
+def test_many_push():
+    fifo_obj = Fifo(3)
+    fifo_obj.push(1)
+    fifo_obj.push(1)
+    fifo_obj.push(1)
+    fifo_obj.push(1)
+    fifo_obj.push(1)
+    fifo_obj.push(1)
+
+    assert fifo_obj.isEmpty() == False, "Failed, several inputs"
+
+
+def test_popWhenEmpty():
+    fifo_obj = Fifo(3)
     fifo_obj.pop()
 
     assert fifo_obj.isEmpty() == True, "Failed, several inputs"
