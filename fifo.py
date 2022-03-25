@@ -16,3 +16,6 @@ class Fifo:
         current_pop_pos = self.pop_pos
         self.pop_pos = self.pop_pos + 1
         return self.container[current_pop_pos]
+
+    def isEmpty(self):
+        return self.elements == 0

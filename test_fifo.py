@@ -32,4 +32,4 @@ def test_push():
 def test_is_empty():
     fifo_obj = Fifo(3)
 
-    assert fifo_obj.is_empty(), "Failed, empty"
+    assert fifo_obj.isEmpty() == True, "Failed, empty"
